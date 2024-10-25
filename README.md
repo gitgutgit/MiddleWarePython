@@ -45,6 +45,8 @@ username: testuser2 password: 1234
 
 # minor tips
 
-how to kill port instead of killing terminals&nbsp;
-lsof -i :8000&nbsp;
+how to kill port instead of killing terminals
+
+lsof -i :8000
+
 kill -9 PID ex: kill -9 1234
