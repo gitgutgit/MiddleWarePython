@@ -1,10 +1,10 @@
 # 1. Setting
 
-(middleware_learn can be replace with any name)
-conda create -n middleware_learn
+(middleware_learn can be replace with any name)&nbsp;
+conda create -n middleware_learn&nbsp;
 conda activate middleware_learn
 
-conda install fastapi uvicorn pydantic (or pip)
+conda install fastapi uvicorn pydantic (or pip)&nbsp;
 conda install python-multipart
 conda install jinja2
 
@@ -41,8 +41,6 @@ username: testuser2 password: 1234
 
 # minor tips
 
-how to kill port instead of killing terminals
-
-lsof -i :8000
-
+how to kill port instead of killing terminals&nbsp;
+lsof -i :8000&nbsp;
 kill -9 PID ex: kill -9 1234
