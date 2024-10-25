@@ -42,5 +42,7 @@ testuser2
 # minor tips
 
 how to kill port instead of killing terminals
+
 lsof -i :8000
-kill -9 PID ex kill -9 1234
+
+kill -9 PID ex: kill -9 1234
