@@ -24,10 +24,20 @@ After a user logs in via the login API, the middleware continuously checks the l
 Blocking Access After Logout:
 When a user logs out, the middleware automatically prevents access to private pages like mypage or any other restricted areas. It redirects the user to the guest page or login page, ensuring that logged-out users cannot access protected information. This mechanism enhances security by ensuring that once a user logs out, they cannot access previously available resources.
 
+function check_login_status : check the login status (mypage, logout)
+
+function log_requests : show the request log (any pages)
+
 # 3. How to test
 
 1. uvicorn app:app --reload
 2. 127.0.0.1:8000 or localhost:8000 on browser
+
+Users.db login information for testing.
+testuser
+1234
+testuser2
+1234
 
 # minor tips
 

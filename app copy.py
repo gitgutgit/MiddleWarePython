@@ -2,15 +2,8 @@ from fastapi import FastAPI, Request, Form, Depends, HTTPException
 from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel
-import logging
-import time 
+
 app = FastAPI()
-
-# Set up logging
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
-
-
 
 # template directory 
 templates = Jinja2Templates(directory="templates")
@@ -25,8 +18,8 @@ users_db = {
         "gender": "Male",
         "phone": "+1-202-555-0183"
     },
-    "testuser2": {
-        "username": "testuser2",
+    "anotheruser": {
+        "username": "anotheruser",
         "password": "1234",
         "birthday": "1985-05-12",
         "gender": "Female",
@@ -47,20 +40,7 @@ def authenticate_user(username: str, password: str):
         return user
     return None
 
-# Middleware1: log requests
-@app.middleware("http")
-async def log_requests(request: Request, call_next):
-    logger.info(f"Request URL: {request.url}")
-    start_time = time.time()
-
-    response = await call_next(request)
-
-    process_time = time.time() - start_time
-    logger.info(f"Response status: {response.status_code} | Time: {process_time:.4f}s")
-    return response
-
-
-# Middleware2 (main): check login status
+# Middleware: check login status
 @app.middleware("http")
 async def check_login(request: Request, call_next):
     if request.url.path not in ["/login", "/"]:
