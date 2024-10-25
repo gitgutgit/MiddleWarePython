@@ -34,10 +34,10 @@ function log_requests : show the request log (any pages)
 2. 127.0.0.1:8000 or localhost:8000 on browser
 
 Users.db login information for testing.
-testuser
-1234
-testuser2
-1234
+
+username: testuser password: 1234
+
+username: testuser2 password: 1234
 
 # minor tips
 
