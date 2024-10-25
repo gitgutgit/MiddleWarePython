@@ -1,11 +1,15 @@
 # 1. Setting
 
-(middleware_learn can be replace with any name)&nbsp;
-conda create -n middleware_learn&nbsp;
+(middleware_learn can be replace with any name)
+
+conda create -n middleware_learn
+
 conda activate middleware_learn
 
-conda install fastapi uvicorn pydantic (or pip)&nbsp;
+conda install fastapi uvicorn pydantic (or pip)
+
 conda install python-multipart
+
 conda install jinja2
 
 # 2. explain code
