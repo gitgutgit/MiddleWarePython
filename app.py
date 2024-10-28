@@ -81,7 +81,7 @@ async def login(request: Request, username: str = Form(...), password: str = For
     user = authenticate_user(username, password)
     if user:
         response = RedirectResponse(url="/", status_code=302)
-        response.set_cookie(key="username", value=user["username"])  # 쿠키로 로그인 상태 유지
+        response.set_cookie(key="username", value=user["username"])  # remain cookie
         return response
     else:
         return templates.TemplateResponse("loginpage.html", {"request": request, "error": "Invalid credentials"})
